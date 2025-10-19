@@ -152,14 +152,6 @@ output/
 3. **Memory issues** - Use smaller width/height for resizing
 4. **Kaggle API errors** - Verify ~/.kaggle/kaggle.json format and permissions
 
-## 📈 Performance
-
-| Scene    | Images | Processing Time | Output Size |
-|----------|--------|----------------|-------------|
-| Fern     | 20     | ~30 seconds    | 6.1 MB      |
-| Flower   | 34     | ~45 seconds    | 11.3 MB     |
-| Horns    | 62     | ~90 seconds    | 18.4 MB     |
-
 ## 📞 Support
 
 For detailed documentation, see `README_preprocessing.txt`.
