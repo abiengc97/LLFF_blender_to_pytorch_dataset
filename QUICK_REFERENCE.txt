@@ -1,0 +1,62 @@
+LLFF to PyTorch3D Converter - Quick Reference
+==============================================
+
+🚀 QUICK START
+--------------
+1. Download dataset:    python download_llff.py
+2. Convert all scenes:  ./preprocess_all_scenes.sh
+3. Use data:            python example_usage.py
+
+📁 MAIN SCRIPTS
+---------------
+preprocess_llff_to_pytorch3d.py    # Main converter (LLFF → PyTorch3D)
+download_llff.py                   # Dataset downloader
+preprocess_all_scenes.sh          # Batch converter
+example_usage.py                  # Usage examples
+
+🔧 BASIC COMMANDS
+-----------------
+# Convert single scene
+python preprocess_llff_to_pytorch3d.py --scene_dir nerf/data/nerf_llff_data/fern --out output --width 504 --height 378
+
+# Convert all scenes
+./preprocess_all_scenes.sh
+
+# Load converted data
+python -c "
+import torch
+data = torch.load('output/fern.pth', weights_only=False)
+images = Image.open('output/fern.png')
+"
+
+📊 AVAILABLE SCENES
+-------------------
+fern (20 images)     flower (34 images)    fortress (42 images)
+horns (62 images)    leaves (26 images)    orchids (25 images)
+room (41 images)     trex (55 images)
+
+📁 FILE STRUCTURE
+-----------------
+nerf/data/nerf_llff_data/    # Raw LLFF datasets
+output/                      # Converted PyTorch3D datasets
+pytorch3d_data/             # Additional converted data
+
+🔍 TROUBLESHOOTING
+------------------
+- "No images found": Check .jpg/.JPG extensions
+- "poses_bounds.npy not found": Verify file exists
+- Memory issues: Use smaller width/height
+- Kaggle errors: Check ~/.kaggle/kaggle.json
+
+📖 DOCUMENTATION
+----------------
+README.md                    # Complete guide
+README_preprocessing.txt     # Detailed preprocessing docs
+QUICK_REFERENCE.txt         # This file
+
+🎯 OUTPUT FORMAT
+----------------
+.pth file: Camera poses, focal lengths, train/val/test splits
+.png file: All images concatenated vertically
+
+Total: 305 images, ~90MB converted data
