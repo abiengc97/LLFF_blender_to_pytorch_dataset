@@ -136,8 +136,8 @@ def convert_llff_to_pytorch3d(llff_path, output_path):
 
 if __name__ == "__main__":
     # Set paths
-    download_path = "/home/agcheria/LLFF_to_pytorch_dataset/nerf/data/nerf_llff_data"
-    output_path = "/home/agcheria/LLFF_to_pytorch_dataset/pytorch3d_data"
+    download_path = "path/to/LLFF_to_pytorch_dataset/nerf/data/nerf_llff_data"
+    output_path = "/path/to/LLFF_to_pytorch_dataset/pytorch3d_data"
     
     # Download dataset
     dataset_path = download_llff_dataset(download_path)

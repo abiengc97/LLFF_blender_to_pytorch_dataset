@@ -4,8 +4,8 @@
 # Converts all LLFF scenes to PyTorch3D educational format
 
 # Configuration
-INPUT_DIR="/home/agcheria/LLFF_to_pytorch_dataset/nerf/data/nerf_llff_data"
-OUTPUT_DIR="/home/agcheria/LLFF_to_pytorch_dataset/output"
+INPUT_DIR="/path/to/LLFF_blender_to_pytorch_dataset/nerf/data/nerf_llff_data"
+OUTPUT_DIR="/path/to/LLFF_blender_to_pytorch_dataset/output"
 WIDTH=504
 HEIGHT=378
 

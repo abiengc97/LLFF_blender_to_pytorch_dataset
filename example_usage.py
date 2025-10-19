@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image
 import os
 
-def load_scene_data(scene_name, data_dir="/home/agcheria/LLFF_to_pytorch_dataset/output"):
+def load_scene_data(scene_name, data_dir="/path/to/LLFF_blender_to_pytorch_dataset/output"):
     """
     Load a preprocessed scene from the output directory
     

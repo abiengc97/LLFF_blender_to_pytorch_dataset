@@ -6,12 +6,14 @@ A toolkit for converting raw LLFF (Local Light Field Fusion) datasets to PyTorch
 
 ### 1. Download Dataset from Kaggle
 
+**📥 Download from: https://www.kaggle.com/datasets/arenagrenade/llff-dataset-full**
+
 **Option A: Using Kaggle API (Recommended)**
 ```bash
 # Install Kaggle API
 pip install kagglehub
 
-# Set up credentials
+# Set up credentials (get API key from https://www.kaggle.com/account)
 mkdir -p ~/.kaggle
 echo '{"username":"your_username","key":"your_api_key"}' > ~/.kaggle/kaggle.json
 chmod 600 ~/.kaggle/kaggle.json
@@ -21,9 +23,10 @@ python download_llff.py
 ```
 
 **Option B: Manual Download**
-1. Visit [Kaggle LLFF Dataset](https://www.kaggle.com/datasets/arenagrenade/llff-dataset-full)
-2. Download the dataset
-3. Extract to `nerf/data/nerf_llff_data/` folder
+1. Go to: **https://www.kaggle.com/datasets/arenagrenade/llff-dataset-full**
+2. Click "Download" button (requires Kaggle account)
+3. Extract the downloaded file to `nerf/data/nerf_llff_data/` folder
+4. Ensure the folder structure looks like: `nerf/data/nerf_llff_data/fern/`, `nerf/data/nerf_llff_data/flower/`, etc.
 
 ### 2. Convert All Scenes
 ```bash
@@ -32,6 +35,13 @@ chmod +x preprocess_all_scenes.sh
 
 # Convert all 8 LLFF scenes to PyTorch3D format
 ./preprocess_all_scenes.sh
+```
+
+**Note:** Before running, update the paths in `preprocess_all_scenes.sh`:
+```bash
+# Edit the script to set your actual paths
+INPUT_DIR="/your/actual/path/LLFF_blender_to_pytorch_dataset/nerf/data/nerf_llff_data"
+OUTPUT_DIR="/your/actual/path/LLFF_blender_to_pytorch_dataset/output"
 ```
 
 ### 3. Use Converted Data
@@ -47,7 +57,7 @@ images = Image.open('output/fern.png')
 ## 📁 Project Structure
 
 ```
-LLFF_blender_to_pytorch_dataset/
+/path/to/LLFF_blender_to_pytorch_dataset/
 ├── README.md                           # This guide
 ├── .gitignore                          # Excludes nerf/ and output/ folders
 ├── download_llff.py                    # Kaggle dataset downloader
@@ -81,10 +91,6 @@ LLFF_blender_to_pytorch_dataset/
 ## 🔧 Installation
 
 ```bash
-# Create environment
-conda create -n llff_converter python=3.9
-conda activate llff_converter
-
 # Install dependencies
 pip install torch torchvision pytorch3d numpy pillow imageio kagglehub
 ```
