@@ -154,7 +154,7 @@ output/
 
 ## 📞 Support
 
-For detailed documentation, see `README_preprocessing.txt`.
+For questions and issues, check the troubleshooting section above or open an issue on the repository.
 
 ---
 
